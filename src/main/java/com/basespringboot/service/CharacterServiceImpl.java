@@ -3,6 +3,7 @@ package com.basespringboot.service;
 import com.basespringboot.dto.CharacterDto;
 import com.basespringboot.model.Character;
 import com.basespringboot.repository.CharacterRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,13 +11,10 @@ import java.util.List;
 
 @Service
 @Transactional
+@RequiredArgsConstructor 
 public class CharacterServiceImpl implements CharacterService {
 
     private final CharacterRepository characterRepository;
-
-    public CharacterServiceImpl(CharacterRepository characterRepository) {
-        this.characterRepository = characterRepository;
-    }
 
     @Override
     public List<Character> findAll() {
