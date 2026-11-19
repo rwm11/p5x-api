@@ -6,7 +6,16 @@ info:
 http:
   method: GET
   url: http://localhost:8080/api/characters
-  auth: inherit
+  headers:
+    - name: Authorization
+      value: |-
+        Bearer  eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc5NTA5NzA3MiwiZXhwIjoxNzk1MTgzNDcyfQ.FtQBFPLYLcuJmIYmLxayAuxRm8zs13VvoXSCV0b-d3U
+          eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc5NTA5NzA3MiwiZXhwIjoxNzk1MTgzNDcyfQ.FtQBFPLYLcuJmIYmLxayAuxRm8zs13VvoXSCV0b-d3U
+  auth:
+    type: bearer
+    token: |-
+      eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc5NTA5NzA3MiwiZXhwIjoxNzk1MTgzNDcyfQ.FtQBFPLYLcuJmIYmLxayAuxRm8zs13VvoXSCV0b-d3U
+        eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc5NTA5NzA3MiwiZXhwIjoxNzk1MTgzNDcyfQ.FtQBFPLYLcuJmIYmLxayAuxRm8zs13VvoXSCV0b-d3U
 
 settings:
   encodeUrl: true
