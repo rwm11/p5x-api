@@ -1,4 +1,4 @@
-# Projet R3-03 (Sprint 1)
+# Projet R3-03 (Sprint 1 et 2)
 
 API REST développé à l'aide du fichier Spring Boot permet de gérer les personnages de l'univers de **Personna 5 Phantom X**.
 
