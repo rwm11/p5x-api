@@ -21,9 +21,11 @@ public class Character {
     private String codename;
     private String initialPersona;
     private String element;
+    private String username;
+    private String password;
     private int rarity;
 
-    @OneToMany(mappedBy = "character", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "character", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @JsonManagedReference
     private List<Skill> skills = new ArrayList<>();
 }

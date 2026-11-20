@@ -4,12 +4,10 @@ import com.basespringboot.dto.CharacterDto;
 import com.basespringboot.model.Character;
 import com.basespringboot.repository.CharacterRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-@Transactional
 public class CharacterServiceImpl implements CharacterService {
 
     private final CharacterRepository characterRepository;
@@ -31,7 +29,6 @@ public class CharacterServiceImpl implements CharacterService {
         character.setInitialPersona(characterDto.getInitialPersona());
         character.setElement(characterDto.getElement());
         character.setRarity(characterDto.getRarity());
-
         return characterRepository.save(character);
     }
 }
