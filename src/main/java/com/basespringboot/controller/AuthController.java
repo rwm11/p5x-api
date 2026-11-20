@@ -31,13 +31,17 @@ public class AuthController {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
             );
-
+            
+            // Si les identifiants sont valides, on récupère les détails de l'utilisateur
             UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+
+            // On génère le token JWT signé pour les requêtes futures
             String token = jwtUtil.generateToken(userDetails);
 
-            return ResponseEntity.ok(Map.of("token", token));
+            return ResponseEntity.ok(Map.of("token", token)); //On retourne le token au client (qui le stockera pour le Bearer)
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("message", "Identifiants invalides"));
+            //// En cas d'échec d'authentification (mauvais mot de passe ou user inconnu)
         }
     }
 }

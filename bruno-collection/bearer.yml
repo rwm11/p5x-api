@@ -1,0 +1,21 @@
+info:
+  name: bearer
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: http://localhost:8080/api/characters
+  headers:
+    - name: Authorization
+      value: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc5NTEwMzYzMSwiZXhwIjoxNzk1MTkwMDMxfQ.p97c4xCn0GJfFhjyDaZkik5osfKf2HWp_T7D5RXaik8
+  auth:
+    type: bearer
+    token: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc5NTEwMzYzMSwiZXhwIjoxNzk1MTkwMDMxfQ.p97c4xCn0GJfFhjyDaZkik5osfKf2HWp_T7D5RXaik8
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
